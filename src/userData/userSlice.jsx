@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from 'axios'
 
-const USERS_URL = "http://localhost:3000/users";
+const USERS_URL = "https://oyanow.vercel.app/users";
 
 const initialState = {
   userss: [],
@@ -23,13 +23,13 @@ export const addUsers = createAsyncThunk('users/addUsers', async (data) => {
 
 //Update Users
 export const editUsers = createAsyncThunk('users/editUsers', async (data) => {
-  const response = await axios.put(`http://localhost:3000/users/${data.id}`, data)
+  const response = await axios.put(`https://oyanow.vercel.app/users/${data.id}`, data)
   return response.data
 })
 
 export const deleteUsers = createAsyncThunk('users/deleteUsers', async (id) => {
 
-  const response = await axios.delete(`http://localhost:3000/users/${id}`)
+  const response = await axios.delete(`https://oyanow.vercel.app/users/${id}`)
   return response.data
 })
 
